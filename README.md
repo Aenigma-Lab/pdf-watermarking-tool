@@ -1,9 +1,11 @@
 # PDF Watermarking Tool
 
+![Sample Image](https://github.com/Aenigma-Lab/pdf-watermarking-tool/raw/main/watermakr-pdf.png)
+
 ## Description
 This project is a simple web application built using Flask, HTML, CSS, and JavaScript that allows users to upload a PDF file and apply a customizable watermark. The application provides a user-friendly interface for watermarking PDFs, making it easy to protect your documents.
 
-## Features
+# Features
 - Upload PDF files
 - Customize watermark text
 - Adjust opacity
@@ -23,7 +25,7 @@ This project is a simple web application built using Flask, HTML, CSS, and JavaS
    ```
 2. **Navigate to the project directory:**
 ```bash
-  cd watermark-pdf
+  cd pdf-watermarking-tool
 ```
 3. **Install the required packages:**
 ```bash
@@ -38,7 +40,7 @@ python app.py
 1. Open your web browser and go to `http://127.0.0.1:5000`.
 2. Upload your PDF file.
 3. Enter the desired watermark text and customize its appearance.
-4. Click the "Watermark" button to generate the watermarked PDF.
+4. Click the "Watermark PDF" button to generate the watermarked PDF.
 5. Download the final document.
 
 ## Contributing
