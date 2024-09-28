@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Preview</title>
+    <style>
+        #pdfPreview {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>PDF Preview</h1>
+    <input type="file" id="pdfFile" accept=".pdf" onchange="previewPDF()">
+    <div id="previewContainer">
+        <embed id="pdfPreview" src="" type="application/pdf">
+    </div>
+
+    <script>
+        function previewPDF() {
+            const fileInput = document.getElementById('pdfFile');
+            const previewContainer = document.getElementById('previewContainer');
+            const pdfPreview = document.getElementById('pdfPreview');
+
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    pdfPreview.setAttribute('src', e.target.result);
+                    previewContainer.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                previewContainer.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

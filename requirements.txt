@@ -1,0 +1,3 @@
+Flask==2.2.3
+PyPDF4==1.0.7
+reportlab==3.6.11

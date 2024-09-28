@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Watermark Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            width: 500px;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .form-group input[type="file"] {
+            display: none;
+        }
+
+        .form-group .custom-file-upload {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-group .file-name {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .form-group .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-group input[type="text"], .form-group input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-button button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .pdf-preview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pdf-preview-item {
+            margin: 10px;
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .pdf-preview-item canvas {
+            max-width: 100%;
+            max-height: 150px;
+        }
+
+        .drop-zone {
+            border: 2px dashed #007BFF;
+            border-radius: 5px;
+            padding: 20px;
+            cursor: pointer;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Watermark PDF</h1>
+            <form method="POST" action="/watermark" enctype="multipart/form-data">
+                <div class="form-group file-input">
+                    <label for="pdf_files">Select PDF Files:</label>
+                    <div class="drop-zone" id="dropZone">
+                        Drag & Drop files here or <label class="custom-file-upload">Select Files<input type="file" id="pdf_files" name="pdf_files[]" accept=".pdf" multiple required style="display: none;"></label>
+                    </div>
+                    <label class="file-name" id="fileNames">No files selected</label>
+                </div>
+                <div class="form-group">
+                    <label for="watermark_text">Watermark Text:</label>
+                    <input type="text" class="form-control" id="watermark_text" name="watermark_text" placeholder="Watermark Text" required>
+                </div>
+                <div class="form-group">
+                    <label for="opacity">Opacity (0-1):</label>
+                    <input type="number" class="form-control" id="opacity" name="opacity" placeholder="Opacity (0-1)" step="0.01" min="0" max="1" value="0.1" required>
+                </div>
+                <div class="form-button">
+                    <button type="submit" class="btn btn-primary">Watermark PDF</button>
+                </div>
+            </form>
+        </div>
+        <div class="pdf-preview" id="pdfPreviewContainer">
+            <!-- Small previews will be displayed here -->
+        </div>
+    </div>
+    <script>
+        function displayPdfPreviews() {
+            const pdfFilesInput = document.getElementById('pdf_files');
+            const pdfPreviewContainer = document.getElementById('pdfPreviewContainer');
+            const fileNames = document.getElementById('fileNames');
+            const dropZone = document.getElementById('dropZone');
+
+            pdfPreviewContainer.innerHTML = '';
+            let count = 0;
+
+            for (const file of pdfFilesInput.files) {
+                if (file.type === 'application/pdf') {
+                    const pdfPreviewItem = document.createElement('div');
+                    pdfPreviewItem.classList.add('pdf-preview-item');
+
+                    const canvas = document.createElement('canvas');
+                    pdfPreviewItem.appendChild(canvas);
+
+                    pdfPreviewContainer.appendChild(pdfPreviewItem);
+
+                    const fileReader = new FileReader();
+                    fileReader.onload = function () {
+                        const typedarray = new Uint8Array(this.result);
+
+                        pdfjsLib.getDocument(typedarray).promise.then(function (pdf) {
+                            pdf.getPage(1).then(function (page) {
+                                const viewport = page.getViewport({ scale: 0.5 });
+                                const canvasContext = canvas.getContext('2d');
+                                canvas.height = viewport.height;
+                                canvas.width = viewport.width;
+
+                                page.render({
+                                    canvasContext,
+                                    viewport,
+                                });
+                            });
+                        });
+                    };
+                    fileReader.readAsArrayBuffer(file);
+
+                    count++;
+                }
+            }
+
+            if (count === 0) {
+                fileNames.textContent = 'No files selected';
+            } else if (count === 1) {
+                fileNames.textContent = '1 file selected';
+            } else {
+                fileNames.textContent = count + ' files selected';
+            }
+        }
+
+        const pdfFilesInput = document.getElementById('pdf_files');
+        pdfFilesInput.addEventListener('change', displayPdfPreviews);
+
+        const dropZone = document.getElementById('dropZone');
+
+        dropZone.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            dropZone.style.backgroundColor = '#e9ecef';
+        });
+
+        dropZone.addEventListener('dragleave', function (e) {
+            e.preventDefault();
+            dropZone.style.backgroundColor = 'transparent';
+        });
+
+        dropZone.addEventListener('drop', function (e) {
+            e.preventDefault();
+            dropZone.style.backgroundColor = 'transparent';
+            pdfFilesInput.files = e.dataTransfer.files;
+            displayPdfPreviews();
+        });
+    </script>
+    <script src="{{ url_for('static', filename='pdf.js') }}"></script>
+    <script src="{{ url_for('static', filename='pdf.worker.js') }}"></script>
+
+</body>
+</html>
