@@ -40,15 +40,41 @@
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/pdf-watermark-tool.git
+   git clone https://github.com/aenigma-lab/pdf-watermark-tool.git
 
 
-## Usage
-1. Open your web browser and go to `http://127.0.0.1:5000`.
-2. Upload your PDF file.
-3. Enter the desired watermark text and customize its appearance.
-4. Click the "Watermark PDF" button to generate the watermarked PDF.
-5. Download the final document.
+##🚀 Usage
+Open your web browser and go to http://127.0.0.1:5000.
 
-## Contributing
-Contributions are welcome! If you have suggestions for improvements or want to report a bug, please create an issue or submit a pull request.
+Upload your PDF file.
+
+Enter your desired watermark text and customize its appearance (e.g., size, opacity).
+
+Click "Watermark PDF" to generate the watermarked PDF.
+
+Download the final document.
+
+##🤝 Contributing
+Contributions are welcome! If you have suggestions for improvements or want to report a bug:
+
+Fork the repository
+
+Create a new branch (git checkout -b feature/my-feature)
+
+Commit your changes (git commit -m "Add new feature")
+
+Push to your branch (git push origin feature/my-feature)
+
+Open a Pull Request describing your changes
+
+##📝 License & Contact
+This project is open-sourced under the MIT License.
+
+For questions or feedback, please reach out:
+
+GitHub: @yourusername
+
+Email: email@example.com
+
+<p align="center"> <img src="https://img.shields.io/badge/Made%20with-Flask-orange?style=for-the-badge" alt="Made with Flask"/> <img src="https://img.shields.io/badge/PDF-PyPDF2%20%7C%20ReportLab-blue?style=for-the-badge" alt="PDF Libraries"/> </p>
+Happy Watermarking!
