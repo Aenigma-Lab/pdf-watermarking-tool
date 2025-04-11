@@ -62,8 +62,9 @@
 - This project is open-sourced under the MIT License.
 - For questions or feedback, please reach out:
 
-GitHub: **@aenigma-lab**
-Email: **f10.shubham@gmail.com**
+- GitHub: **@aenigma-lab**
+
+- Email: **f10.shubham@gmail.com**
 
 <p align="center"> <img src="https://img.shields.io/badge/Made%20with-Flask-orange?style=for-the-badge" alt="Made with Flask"/> <img src="https://img.shields.io/badge/PDF-PyPDF2%20%7C%20ReportLab-blue?style=for-the-badge" alt="PDF Libraries"/> </p>
 Happy Watermarking!
