@@ -43,38 +43,27 @@
    git clone https://github.com/aenigma-lab/pdf-watermark-tool.git
 
 
-##🚀 Usage
-Open your web browser and go to http://127.0.0.1:5000.
+## 🚀 Usage
+- Open your web browser and go to http://127.0.0.1:5000.
+- Upload your PDF file.
+- Enter your desired watermark text and customize its appearance (e.g., size, opacity).
+- Click "Watermark PDF" to generate the watermarked PDF.
+- Download the final document.
 
-Upload your PDF file.
+## 🤝 Contributing
+- Contributions are welcome! If you have suggestions for improvements or want to report a bug:
+- Fork the repository
+- Create a new branch (git checkout -b feature/my-feature)
+- Commit your changes (git commit -m "Add new feature")
+- Push to your branch (git push origin feature/my-feature)
+- Open a Pull Request describing your changes
 
-Enter your desired watermark text and customize its appearance (e.g., size, opacity).
+## 📝 License & Contact
+- This project is open-sourced under the MIT License.
+- For questions or feedback, please reach out:
 
-Click "Watermark PDF" to generate the watermarked PDF.
-
-Download the final document.
-
-##🤝 Contributing
-Contributions are welcome! If you have suggestions for improvements or want to report a bug:
-
-Fork the repository
-
-Create a new branch (git checkout -b feature/my-feature)
-
-Commit your changes (git commit -m "Add new feature")
-
-Push to your branch (git push origin feature/my-feature)
-
-Open a Pull Request describing your changes
-
-##📝 License & Contact
-This project is open-sourced under the MIT License.
-
-For questions or feedback, please reach out:
-
-GitHub: @yourusername
-
-Email: email@example.com
+GitHub: **@aenigma-lab**
+Email: **f10.shubham@gmail.com**
 
 <p align="center"> <img src="https://img.shields.io/badge/Made%20with-Flask-orange?style=for-the-badge" alt="Made with Flask"/> <img src="https://img.shields.io/badge/PDF-PyPDF2%20%7C%20ReportLab-blue?style=for-the-badge" alt="PDF Libraries"/> </p>
 Happy Watermarking!
