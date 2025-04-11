@@ -1,40 +1,47 @@
-# PDF Watermarking Tool
+# 🖋️ PDF Watermarking Tool
 
-![Sample Image](https://github.com/Aenigma-Lab/pdf-watermarking-tool/raw/main/watermakr-pdf.png)
+[![PDF Watermarking Tool](https://github.com/Aenigma-Lab/pdf-watermarking-tool/raw/main/watermakr-pdf.png)](#)
 
-## Description
-This project is a simple web application built using Flask, HTML, CSS, and JavaScript that allows users to upload a PDF file and apply a customizable watermark. The application provides a user-friendly interface for watermarking PDFs, making it easy to protect your documents.
+> **A simple web application** built with **Flask**, **HTML**, **CSS**, and **JavaScript** that allows users to upload a PDF file and apply a customizable watermark.
 
-# Features
-- Upload PDF files
-- Customize watermark text
-- Adjust opacity
-- Download the watermarked PDF
-- Responsive design for easy use on any device
+---
 
-## Technologies Used
-- **Flask**: Python web framework for building the backend
-- **HTML/CSS**: For structuring and styling the web application
-- **JavaScript**: For client-side interactivity
-- **PDF Processing Library**: (e.g., PyPDF2, reportlab) for manipulating PDF files
+## 📖 Table of Contents
+1. [Features](#features)
+2. [Technologies Used](#technologies-used)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Contributing](#contributing)
+6. [License & Contact](#license--contact)
 
-## Installation
-1. **Clone the repository:**
-```bash
+---
+
+## ✨ Features
+
+- **Upload PDF files**  
+- **Customize watermark text**  
+- **Adjust opacity**  
+- **Download the watermarked PDF**  
+- **Responsive design** for easy use on any device
+
+---
+
+## ⚙️ Technologies Used
+
+| **Category** | **Technology**                     |
+|--------------|------------------------------------|
+| **Backend**  | Flask (Python)                     |
+| **Frontend** | HTML, CSS, JavaScript              |
+| **PDF Lib**  | PyPDF2 or ReportLab (for PDF ops)   |
+
+---
+
+## 🔧 Installation
+
+1. **Clone the repository**:
+   ```bash
    git clone https://github.com/yourusername/pdf-watermark-tool.git
-   ```
-2. **Navigate to the project directory:**
-```bash
-  cd pdf-watermarking-tool
-```
-3. **Install the required packages:**
-```bash
-pip install -r requirements.txt
-```
-4. **Run the application:**
-```bash
-python app.py
-```
+
 
 ## Usage
 1. Open your web browser and go to `http://127.0.0.1:5000`.
