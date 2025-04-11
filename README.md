@@ -67,4 +67,12 @@
 - Email: **f10.shubham@gmail.com**
 
 <p align="center"> <img src="https://img.shields.io/badge/Made%20with-Flask-orange?style=for-the-badge" alt="Made with Flask"/> <img src="https://img.shields.io/badge/PDF-PyPDF2%20%7C%20ReportLab-blue?style=for-the-badge" alt="PDF Libraries"/> </p>
+
+
 Happy Watermarking!
+
+<p align="center">
+  <!-- A simple water droplet icon from Icons8 -->
+  <img src="https://img.icons8.com/ios-filled/100/007ACC/water.png" alt="Watermark Icon" />
+</p>
+
