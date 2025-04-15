@@ -15,7 +15,7 @@
 6. [License & Contact](#license--contact)
 
 ---
-## ✨ Features
+## ✨ Features <a name="features"></a>
 
 - **Upload PDF files**  
 - **Customize watermark text**  
@@ -25,7 +25,7 @@
 
 ---
 
-## ⚙️ Technologies Used
+## ⚙️ Technologies Used <a name="technologies-used"></a>
 
 | **Category** | **Technology**                     |
 |--------------|------------------------------------|
@@ -35,21 +35,21 @@
 
 ---
 
-## 🔧 Installation
+## 🔧 Installation <a name="installation"></a>
 
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/aenigma-lab/pdf-watermark-tool.git
 
 
-## 🚀 Usage
+## 🚀 Usage <a name="usage"></a>
 - Open your web browser and go to http://127.0.0.1:5000.
 - Upload your PDF file.
 - Enter your desired watermark text and customize its appearance (e.g., size, opacity).
 - Click "Watermark PDF" to generate the watermarked PDF.
 - Download the final document.
 
-## 🤝 Contributing
+## 🤝 Contributing <a name="contributing"></a>
 - Contributions are welcome! If you have suggestions for improvements or want to report a bug:
 - Fork the repository
 - Create a new branch (git checkout -b feature/my-feature)
@@ -57,7 +57,7 @@
 - Push to your branch (git push origin feature/my-feature)
 - Open a Pull Request describing your changes
 
-## 📝 License & Contact
+## 📝 License & Contact <a name="license--contact"></a>
 - This project is open-sourced under the MIT License.
 - For questions or feedback, please reach out:
 
